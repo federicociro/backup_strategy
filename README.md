@@ -3,6 +3,25 @@ This repository contains documentation for the backup strategy used for my Linux
 
 [![GitHub Super-Linter](https://github.com/federicociro/backup_strategy/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
+## Table of contents
+1. [Tools](#tools)
+2. [Installation](#installation)
+    - [Borg Backup](#borg-backup)
+        - [Debian/Ubuntu](#debianubuntu)
+        - [Fedora/CentOS](#fedoracentos)
+        - [Arch Linux](#arch-linux)
+    - [Rclone](#rclone)
+        - [Debian/Ubuntu](#debianubuntu-1)
+        - [Fedora/CentOS](#fedoracentos-1)
+        - [Arch Linux](#arch-linux-1)
+3. [Backup Process](#backup-process)
+4. [Restoration](#restoration)
+5. [Setting up Backup with Systemd](#setting-up-backup-with-systemd)
+    - [Backup Service](#backup-service)
+    - [Timer Service](#timer-service)
+6. [Conclusion](#conclusion)
+7. [To Do](#to-do)
+
 ## Tools
 - [Borg Backup](https://borgbackup.readthedocs.io/) - A deduplicating backup program that supports compression and authenticated encryption. 
 - [Rclone](https://rclone.org/) - A command line tool for synchronizing files and directories to and from various cloud storage providers.
