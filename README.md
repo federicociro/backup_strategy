@@ -107,3 +107,11 @@ sudo systemctl status borg-backup.service
 
 ## Conclusion
 This documentation is intended to serve as a guide for anyone responsible for maintaining and managing backups for our system. It is important to regularly test and verify the backups to ensure that they can be successfully restored in case of a failure or data loss.
+
+## To Do
+- [ ] Add more features to the script: dry-run option
+- [ ] Improve performance of the code
+- [X] Add more comments to the code for better readability
+- [X] Write more detailed documentation
+- [ ] Add test cases to ensure reliability
+- [ ] Add error handling to the `mysqldump` command
