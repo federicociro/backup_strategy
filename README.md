@@ -41,9 +41,9 @@ sudo pacman -S rclone
 
 ## Backup Process
 The backup script is built in 3 parts:
-1- Create a new archive using Borg Backup, with the `borg create` command.
-2- Use rclone to transfer the archive to a remote storage location, with the `rclone copy` command.
-3- Prune old backups, to keep a specified number of backups and to save space, with the `borg prune` command.
+1. Create a new archive using Borg Backup, with the `borg create` command.
+2. Use rclone to transfer the archive to a remote storage location, with the `rclone copy` command.
+3. Prune old backups, to keep a specified number of backups and to save space, with the `borg prune` command.
     
 ## Restoration
 In case of a failure or data loss, backups can be restored using the `borg extract` command. Detailed instructions for restoring specific files or directories can be found in the Borg Backup documentation.
