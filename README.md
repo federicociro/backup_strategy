@@ -1,7 +1,7 @@
 # Backup Strategy
 This repository contains documentation for the backup strategy used for my Linux systems. It includes information on the tools and processes used for creating and maintaining backups, as well as instructions for restoring from backups in case of a failure or data loss.
 
-[![GitHub Super-Linter](https://github.com/<OWNER>/<REPOSITORY>/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![GitHub Super-Linter](https://github.com/federicociro/backup_strategy/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
 ## Tools
 - [Borg Backup](https://borgbackup.readthedocs.io/) - A deduplicating backup program that supports compression and authenticated encryption. 
