@@ -1,0 +1,13 @@
+[Unit]
+Description=Create backup using Borg Backup
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/bin/sh -c "/usr/local/bin/borg-backup.sh"
+StandardOutput=file:/var/log/borg-backup.log
+StandardError=file:/var/log/borg-backup-error.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
