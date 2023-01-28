@@ -11,33 +11,33 @@ This repository contains documentation for the backup strategy used for my Linux
 ```bash
 sudo apt-get update
 sudo apt-get install borgbackup
-```bash
+```
 
 #### Fedora/CentOS
 ```bash
 sudo dnf install borgbackup
-```bash
+```
 
 #### Arch Linux
 ```bash
 sudo pacman -S borgbackup
-```bash
+```
 
 ### Rclone
 #### Debian/Ubuntu
 ```bash
 curl https://rclone.org/install.sh | sudo bash
-```bash
+```
 
 #### Fedora/CentOS
 ```bash
 curl https://rclone.org/install.sh | sudo bash
-```bash
+```
 
 #### Arch Linux#### Arch Linux
 ```bash
 sudo pacman -S rclone
-```bash
+```
 
 ## Backup Process
 The backup script is built in 3 parts:
