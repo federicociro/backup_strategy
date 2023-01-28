@@ -49,5 +49,61 @@ The backup script is built in 3 parts:
 In case of a failure or data loss, backups can be restored using the `borg extract` command. Detailed instructions for restoring specific files or directories can be found in the Borg Backup documentation.
 Alternatively, `borg mount` can be used for temporal restoration.
 
+## Setting up Backup with Systemd
+In order to run the backup script automatically using systemd, you will need to create two service files: one for the backup service and one for the timer service.
+
+## Backup Service
+Create a new file named `borg-backup.service` in the `/etc/systemd/system/` directory with the following contents:
+```bash
+[Unit]
+Description=Create backup using Borg Backup
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/local/bin/borg-backup.sh
+StandardOutput=file:/var/log/borg-backup.log
+StandardError=file:/var/log/borg-backup-error.log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+- Make sure to adjust the paths and user according to your system setup.
+
+Then, enable the service by running:
+```bash
+sudo systemctl enable borg-backup.service
+```
+
+## Timer Service
+Create a new file named `borg-backup.timer` in the `/etc/systemd/system/` directory with the following contents:
+```bash
+[Unit]
+Description=Create backup using Borg Backup
+
+[Timer]
+OnCalendar=daily
+AccuracySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+- Make sure to adjust the timing of the backup by modifying the `OnCalendar` value to fit your needs.
+
+Then, enable the timer by running:
+```bash
+sudo systemctl enable borg-backup.timer
+```
+
+You can check the status of the timer and the service by running:
+```bash
+sudo systemctl status borg-backup.timer
+sudo systemctl status borg-backup.service
+```
+
 ## Conclusion
 This documentation is intended to serve as a guide for anyone responsible for maintaining and managing backups for our system. It is important to regularly test and verify the backups to ensure that they can be successfully restored in case of a failure or data loss.
