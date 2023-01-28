@@ -34,7 +34,7 @@ curl https://rclone.org/install.sh | sudo bash
 curl https://rclone.org/install.sh | sudo bash
 ```
 
-#### Arch Linux#### Arch Linux
+#### Arch Linux
 ```bash
 sudo pacman -S rclone
 ```
